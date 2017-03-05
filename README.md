@@ -22,15 +22,13 @@ conda env create -f environment.yml
 
 1. Export Apple Health data from within the Health app.
 
-![step 1: click on "user" icon](images/step1.png)
-
-![step 2: export data](images/step2.png)
+  ![click on "user" icon and then on "export health data"](images/exporting.png)
 
 2. Pick a location (usually Dropbox is convenient) and then run script:
 
-```bash
-$ python export.py /path/to/export.zip ~/Downloads/data.feather
-```
+  ```bash
+  $ python export.py /path/to/export.zip ~/Downloads/data.feather
+  ```
 
 3. Now you can load the data in either R or Python!
    ([instructions](https://blog.rstudio.org/2016/03/29/feather/))
