@@ -1,6 +1,6 @@
 # Apple Health Data Exporter
 
-This Python script takes a dump of Apple Health data (the `export.zip` file
+This Python 3 script takes a dump of Apple Health data (the `export.zip` file
 generated through an Apple Health data export) and saves a subset of fields and
 records to a [feather](https://github.com/wesm/feather) file. This can then be
 read by both Python and R.
@@ -12,10 +12,16 @@ read by both Python and R.
 * [`lxml`](http://lxml.de/index.html)
 
 If you have [`conda`](https://conda.io/docs/) installed, you can install
-prerequisites in a new environment by doing
+prerequisites in a new environment by running:
 
 ```bash
 conda env create -f environment.yml
+```
+
+If you prefer to use `pip` (hopefully, with a virtualenv) you can do:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ### Installing Feather in R
