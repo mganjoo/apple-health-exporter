@@ -41,6 +41,6 @@ if __name__ == "__main__":
     parser.add_argument("input_file", help="path to export.zip file")
     parser.add_argument("output_file", help="path to output file")
     parser.add_argument("--remove_zip", dest="remove_zip", action="store_true",
-                        help="whether to keep zip file after extraction")
+                        help="delete zip after extraction (default: false)")
     args = parser.parse_args()
     health_xml_to_feather(args.input_file, args.output_file, args.remove_zip)
