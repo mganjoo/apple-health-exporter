@@ -113,3 +113,8 @@ install.packages("feather")
    HKQuantityTypeIdentifierStepCount                     8810
    dtype: int64
    ```
+
+## Examples
+
+Some examples using this data export can be found in my
+[apple-health-examples](https://github.com/mganjoo/apple-health-examples) repo.
