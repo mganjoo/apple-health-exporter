@@ -7,20 +7,24 @@ read by both Python and R.
 
 ## Prerequisites
 
-* [`feather-format`](https://github.com/wesm/feather)
-* [`pandas`](http://pandas.pydata.org/)
-* [`lxml`](http://lxml.de/index.html)
+- [`pandas`](http://pandas.pydata.org/)
+- [`pyarrow`](https://pypi.org/project/pyarrow/)
+- [`lxml`](http://lxml.de/index.html)
 
-If you have [`conda`](https://conda.io/docs/) installed, you can install
-prerequisites in a new environment by running:
+You can install the above three packages (preferably in a new virtual
+environment):
 
-```bash
-conda env create -f environment.yml
+```sh
+# optional: create virtualenv within directory to avoid polluting system Python
+python -m venv .venv
+source .venv/bin/activate
+
+pip install pandas pyarrow lxml
 ```
 
-If you prefer to use `pip` (hopefully, with a virtualenv) you can do:
+You can also use one of the included `requirements.txt` file for `pip`:
 
-```bash
+```sh
 pip install -r requirements.txt
 ```
 
@@ -37,13 +41,13 @@ install.packages("feather")
 
 1. Export Apple Health data from within the Health app.
 
-  ![click on "user" icon and then on "export health data"](images/exporting.png)
+![click on "user" icon and then on "export health data"](images/exporting.png)
 
 2. Pick a location (I usually export to Dropbox) and then run the script:
 
-  ```bash
-  $ python export.py ~/Dropbox/export.zip ~/Downloads/data.feather
-  ```
+```bash
+$ python export.py ~/Dropbox/export.zip ~/Downloads/data.feather
+```
 
 3. Now you can load the data in either R or Python.
 
@@ -76,8 +80,8 @@ install.packages("feather")
    In Python:
 
    ```python
-   import feather
-   data = feather.read_dataframe("data.feather")
+   import pandas as pd
+   data = pd.read_feather("data.feather")
    data.groupby("type").size()
    ```
 
