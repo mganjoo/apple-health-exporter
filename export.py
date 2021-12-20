@@ -29,7 +29,9 @@ def health_xml_to_feather(zip_file, output_file, remove_zip=False):
             df[k] = pd.to_numeric(df[k], errors="coerce")
             df = df[df["value"].notnull()]
 
-        df.to_feather(output_file)
+        # Feature requires DFs to have a default index, so reset index which
+        # may have become non-contiguous after above cleanup
+        df.reset_index(drop=True).to_feather(output_file)
 
     if remove_zip:
         os.remove(zip_file)
