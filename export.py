@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import tempfile
 import zipfile
+from pathlib import Path
 from lxml import etree
 
 DATETIME_KEYS = ["startDate", "endDate"]
@@ -15,8 +16,10 @@ def health_xml_to_feather(zip_file, output_file, remove_zip=False):
     with tempfile.TemporaryDirectory() as tmpdirname:
         f = zipfile.ZipFile(zip_file, "r")
         f.extractall(tmpdirname)
-        xml_path = os.path.join(tmpdirname, "apple_health_export/export.xml")
-        tree = etree.parse(xml_path)
+        # Use stem to get export.xml file name in localized versions of Apple Health
+        zf_path = Path(zip_file)
+        xml_path = Path(tmpdirname) / Path("apple_health_export") / Path(f"{zf_path.stem}.xml")
+        tree = etree.parse(str(xml_path))
         records = tree.xpath("//Record")
         df = pd.DataFrame([{key: r.get(key) for key in ALL_KEYS}
                            for r in records])
