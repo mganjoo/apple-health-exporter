@@ -47,7 +47,18 @@ install.packages("feather")
 
 ```bash
 $ python export.py ~/Dropbox/export.zip ~/Downloads/data.feather
+
+# Specify XML file name in case zip file has been renamed
+$ python export.py ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xml_file_name export.zip
 ```
+
+> The export zip file contains an XML file containing
+> actual data. By default, this name can be inferred
+> from the stem of the zip file name (for example
+> `export.zip` will contain a file named `export.xml`).
+> However, if the zip file has been renamed, you may
+> need to explicitly provide the name of the XML file
+> with the `--xml_file_name` option.
 
 3. Now you can load the data in either R or Python.
 
