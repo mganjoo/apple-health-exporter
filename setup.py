@@ -1,5 +1,6 @@
 import setuptools
 
+from setuptools import setup, find_packages
 
 setuptools.setup(
 	name='apple health exporter',
@@ -21,7 +22,7 @@ read by both Python and R.
 		"Bug Tracker": "https://github.com/mganjoo/apple-health-exporter/issues"
 	},
 	license='MIT',
-	packages=[''],
+	packages=find_packages(),
 	package_dir={'':'applehealthexporter'},
 	scripts=['applehealthexporter/export.py'] ,
 	install_requires=['numpy','pandas','pyarrow','python-dateutil','pytz','six'],
