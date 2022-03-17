@@ -20,7 +20,7 @@ read by both Python and R.
 		"Bug Tracker": "https://github.com/mganjoo/apple-health-exporter/issues"
 	},
 	license='MIT',
-	packages=['.'],
+	packages=['applehealthexporter'],
 	package_dir={'':'applehealthexporter'},
 	scripts=['applehealthexporter/export.py'] ,
 	install_requires=['numpy','pandas','pyarrow','python-dateutil','pytz','six'],
