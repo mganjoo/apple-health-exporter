@@ -21,7 +21,7 @@ read by both Python and R.
 	},
 	license='MIT',
 	packages=['applehealthexporter'],
-	# package_dir={'':'applehealthexporter'},
+	package_dir={'.'},
 	scripts=['export.py'],
 	install_requires=['numpy','pandas','pyarrow','python-dateutil','pytz','six'],
 )
