@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: apple-health-exporter
+Version: 1.0.0
+Summary: Python script to export Apple Health dump file to a data frame for analysis.
+Home-page: https://github.com/mganjoo/apple-health-exporter
+Author: Milind Ganjoo
+Author-email: milind.ganjoo@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/mganjoo/apple-health-exporter/issues
+Description: 
+        # Apple Health Data Exporter
+        
+        This Python 3 script takes a dump of Apple Health data (the `export.zip` file
+        generated through an Apple Health data export) and saves a subset of fields and
+        records to a [feather](https://github.com/wesm/feather) file. This can then be
+        read by both Python and R.
+        	
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

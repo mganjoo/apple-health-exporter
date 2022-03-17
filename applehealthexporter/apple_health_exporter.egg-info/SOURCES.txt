@@ -1,0 +1,9 @@
+README.md
+setup.py
+applehealthexporter/__init__.py
+applehealthexporter/export.py
+applehealthexporter/apple_health_exporter.egg-info/PKG-INFO
+applehealthexporter/apple_health_exporter.egg-info/SOURCES.txt
+applehealthexporter/apple_health_exporter.egg-info/dependency_links.txt
+applehealthexporter/apple_health_exporter.egg-info/requires.txt
+applehealthexporter/apple_health_exporter.egg-info/top_level.txt
