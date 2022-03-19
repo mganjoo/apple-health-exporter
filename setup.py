@@ -23,7 +23,7 @@ read by both Python and R.
 	packages=['apple_health_exporter'],
 	package_dir={'.':''},
 	scripts=['apple_health_exporter/export.py'],
-	install_requires=['numpy','pandas','pyarrow','python-dateutil','pytz','six'.'lxml'],
+	install_requires=['numpy','pandas','pyarrow','python-dateutil','pytz','six','lxml'],
 )
 
 
