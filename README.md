@@ -137,6 +137,6 @@ Some examples using this data export can be found in my
 
 Thanks to contributors who have helped improve this package!
 
-- @aapris
-- @brunoamaral
-- @Jeanselme
+- [@aapris](https://github.com/aapris)
+- [@brunoamaral](https://github.com/brunoamaral)
+- [@Jeanselme](https://github.com/Jeanselme)
