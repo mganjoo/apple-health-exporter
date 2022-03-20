@@ -22,7 +22,11 @@ read by both Python and R.
 	license='MIT',
 	packages=['apple_health_exporter'],
 	package_dir={'.':''},
-	scripts=['apple_health_exporter/export.py'],
+	entry_points={
+		'console_scripts': [
+			'apple-health-exporter=apple_health_exporter.export:export',
+		]
+	},
 	install_requires=['numpy','pandas','pyarrow','python-dateutil','pytz','six','lxml'],
 )
 
