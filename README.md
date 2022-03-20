@@ -132,3 +132,11 @@ apple-health-exporter ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xm
 
 Some examples using this data export can be found in my
 [apple-health-examples](https://github.com/mganjoo/apple-health-examples) repo.
+
+## Contributors
+
+Thanks to contributors who have helped improve this package!
+
+- @aapris
+- @brunoamaral
+- @Jeanselme
