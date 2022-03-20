@@ -43,12 +43,12 @@ install.packages("feather")
 2. Pick a location (I usually export to Dropbox) and then run the script:
 
 ```bash
-$ apple-health-exporter ~/Dropbox/export.zip ~/Downloads/data.feather
+apple-health-exporter ~/Dropbox/export.zip ~/Downloads/data.feather
 # alternative method:
-$ python -m apple_health_exporter ~/Dropbox/export.zip ~/Downloads/data.feather
+python -m apple_health_exporter ~/Dropbox/export.zip ~/Downloads/data.feather
 
 # Specify XML file name in case zip file has been renamed
-$ apple-health-exporter ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xml_file_name export.zip
+apple-health-exporter ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xml_file_name export.zip
 ```
 
 > The export zip file contains an XML file containing
