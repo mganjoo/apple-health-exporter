@@ -1,0 +1,31 @@
+[tool.poetry]
+authors = ["Milind Ganjoo <milind.ganjoo@gmail.com>"]
+description = "Python module to export Apple Health dump file to a data frame for analysis"
+license = "MIT"
+name = "apple-health-exporter"
+packages = [
+  {include = "apple_health_exporter"},
+]
+readme = "README.md"
+repository = "https://github.com/mganjoo/apple-health-exporter"
+version = "1.0.2"
+
+[tool.poetry.dependencies]
+lxml = "^4.8.0"
+pandas = "^1.4.1"
+pyarrow = "^7.0.0"
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+flake8 = "^4.0.1"
+lxml-stubs = "^0.4.0"
+mypy = "^0.941"
+pandas-stubs = "^1.2.0"
+
+[tool.poetry.scripts]
+apple-health-exporter = "apple_health_exporter:main"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]

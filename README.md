@@ -1,32 +1,29 @@
-# Apple Health Data Exporter
+# Apple Health Exporter
 
-This Python 3 script takes a dump of Apple Health data (the `export.zip` file
+This Python 3 module takes a dump of Apple Health data (the `export.zip` file
 generated through an Apple Health data export) and saves a subset of fields and
 records to a [feather](https://github.com/wesm/feather) file. This can then be
 read by both Python and R.
 
-## Prerequisites
+## Getting started
 
-- [`pandas`](http://pandas.pydata.org/)
-- [`pyarrow`](https://pypi.org/project/pyarrow/)
-- [`lxml`](http://lxml.de/index.html)
+The package can be used either as an executable module, or as an importable library.
 
-You can install the above three packages (preferably in a new virtual
-environment):
+First, install from PyPI (preferably in a new virtual environment):
 
-```sh
+```bash
 # optional: create virtualenv within directory to avoid polluting system Python
 python -m venv .venv
 source .venv/bin/activate
 
-pip install pandas pyarrow lxml
+pip install apple-health-exporter
 ```
 
-You can also use one of the included `requirements.txt` file for `pip`:
+This will also install the following dependencies:
 
-```sh
-pip install -r requirements.txt
-```
+- [`pandas`](http://pandas.pydata.org/)
+- [`pyarrow`](https://pypi.org/project/pyarrow/)
+- [`lxml`](http://lxml.de/index.html)
 
 ### Installing Feather in R
 
@@ -37,7 +34,7 @@ need the feather package:
 install.packages("feather")
 ```
 
-## Steps
+## Usage
 
 1. Export Apple Health data from within the Health app.
 
@@ -46,10 +43,12 @@ install.packages("feather")
 2. Pick a location (I usually export to Dropbox) and then run the script:
 
 ```bash
-$ python export.py ~/Dropbox/export.zip ~/Downloads/data.feather
+apple-health-exporter ~/Dropbox/export.zip ~/Downloads/data.feather
+# alternative method:
+python -m apple_health_exporter ~/Dropbox/export.zip ~/Downloads/data.feather
 
 # Specify XML file name in case zip file has been renamed
-$ python export.py ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xml_file_name export.zip
+apple-health-exporter ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xml_file_name export.zip
 ```
 
 > The export zip file contains an XML file containing
@@ -133,3 +132,36 @@ $ python export.py ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xml_f
 
 Some examples using this data export can be found in my
 [apple-health-examples](https://github.com/mganjoo/apple-health-examples) repo.
+
+## Contributing
+
+This package uses [Poetry](https://python-poetry.org) for package management.
+
+To build and test the package locally, check out the repo and:
+
+1. Install Poetry (one-time) using one of the methods on the [Installation](https://python-poetry.org/docs/#installation) page.
+
+2. Install all dependencies (automatically creates a virtual environment):
+
+```
+poetry install
+```
+
+3. Make changes, and test using the following commands:
+
+```bash
+# Type checking
+poetry run mypy .
+# Linting
+poetry run flake8 apple_health_exporter/
+# Formatting
+poetry run black .
+```
+
+## Contributors
+
+Thanks to contributors who have helped improve this package!
+
+- [@aapris](https://github.com/aapris)
+- [@brunoamaral](https://github.com/brunoamaral)
+- [@Jeanselme](https://github.com/Jeanselme)

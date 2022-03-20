@@ -1,4 +1,4 @@
-from .export import export
+from . import main
 
 if __name__ == "__main__":
-	export()
+    main()
