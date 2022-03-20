@@ -21,8 +21,8 @@ read by both Python and R.
 	},
 	license='MIT',
 	packages=['apple_health_exporter'],
-	package_dir={'':'.'}
-	entry_points={
+	package_dir={'':'.'},
+	entry_points = {
 		'console_scripts': [
 			'apple-health-exporter=apple_health_exporter.export:export',
 		]
