@@ -133,6 +133,31 @@ apple-health-exporter ~/Dropbox/export_renamed.zip ~/Downloads/data.feather --xm
 Some examples using this data export can be found in my
 [apple-health-examples](https://github.com/mganjoo/apple-health-examples) repo.
 
+## Contributing
+
+This package uses [Poetry](https://python-poetry.org) for package management.
+
+To build and test the package locally, check out the repo and:
+
+1. Install Poetry (one-time) using one of the methods on the [Installation](https://python-poetry.org/docs/#installation) page.
+
+2. Install all dependencies (automatically creates a virtual environment):
+
+```
+poetry install
+```
+
+3. Make changes, and test using the following commands:
+
+```bash
+# Type checking
+poetry run mypy .
+# Linting
+poetry run flake8 apple_health_exporter/
+# Formatting
+poetry run black .
+```
+
 ## Contributors
 
 Thanks to contributors who have helped improve this package!
