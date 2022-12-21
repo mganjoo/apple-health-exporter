@@ -35,14 +35,8 @@ def health_xml_to_feather(zip_file, output_file, remove_zip=False, xml_file_name
         # Clean up key types
         for k in DATETIME_KEYS:
             df[k] = pd.to_datetime(df[k])
-        for k in NUMERIC_KEYS:
-            # some rows have non-numeric values, so coerce and drop NaNs
-            df[k] = pd.to_numeric(df[k], errors="coerce")
-            df = df[df["value"].notnull()]
 
-        # Feature requires DFs to have a default index, so reset index which
-        # may have become non-contiguous after above cleanup
-        df.reset_index(drop=True).to_feather(output_file)
+        df.to_feather(output_file)
 
     if remove_zip:
         os.remove(zip_file)
